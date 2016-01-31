@@ -1,7 +1,8 @@
 # homebridge-mpd
 Homebridge plugin to control MPD.
+Includes volume control and play/stop control. Volume control uses the brightness Characteristic of the homekit protocol because a volume Characteristic is not available yet.
 
-### Usage:
+### Configuration:
 
 ```json
 "accessories": [
@@ -22,3 +23,9 @@ Homebridge plugin to control MPD.
 ### Dependencies:
  * Homebridge: https://github.com/nfarina/homebridge
  * Mpd.js: https://github.com/andrewrk/mpd.js
+
+### Usage:
+ - *Siri, turn Stereo on*
+ - *Siri, turn Stereo off*
+ - *Siri, change Stereo to 20%*
+ - *Siri, is Stereo on?*
