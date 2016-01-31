@@ -14,6 +14,11 @@ Homebridge plugin to control MPD.
 ]
 ```
 
+#### Default values:
+ * name: "MPD"
+ * host: "localhost"
+ * port: "6600"
+
 ### Dependencies:
  * Homebridge: https://github.com/nfarina/homebridge
  * Mpd.js: https://github.com/andrewrk/mpd.js
