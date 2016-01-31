@@ -1,0 +1,9 @@
+"accessories": [
+   "accessories": [
+   {
+       "accessory": "mpd",
+       "name": "Stereo",
+       "host": "localhost",
+       "port": "6600"
+   }
+]

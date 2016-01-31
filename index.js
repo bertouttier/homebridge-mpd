@@ -1,15 +1,10 @@
 var mpd = require('mpd');
 var cmd = mpd.cmd;
-// var inherits = require('util').inherits;
-// var Service, Characteristic, VolumeCharacteristic;
 var Service, Characteristic;
 
 module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
-
-  // we can only do this after we receive the homebridge API object
-  // makeVolumeCharacteristic();
   homebridge.registerAccessory("homebridge-mpd", "mpd", MpdAccessory);
 }
 
@@ -36,7 +31,6 @@ function MpdAccessory(log, config) {
     .on('set', this.setOn.bind(this));
   
   this.service
-    // .addCharacteristic(VolumeCharacteristic)
     .addCharacteristic(new Characteristic.Brightness())
     .on('get', this.getVolume.bind(this))
     .on('set', this.setVolume.bind(this));
@@ -117,24 +111,3 @@ MpdAccessory.prototype.setVolume = function(volume, callback) {
     }   
   });
 }
-
-//
-// Custom Characteristic for Volume
-//
-// function makeVolumeCharacteristic() {
-
-//   VolumeCharacteristic = function() {
-//     Characteristic.call(this, 'Volume', '91288267-5678-49B2-8D22-F57BE995AA93');
-//     this.setProps({
-//       format: Characteristic.Formats.INT,
-//       unit: Characteristic.Units.PERCENTAGE,
-//       maxValue: 100,
-//       minValue: 0,
-//       minStep: 1,
-//       perms: [Characteristic.Perms.READ, Characteristic.Perms.WRITE, Characteristic.Perms.NOTIFY]
-//     });
-//     this.value = this.getDefaultValue();
-//   };
-  
-//   inherits(VolumeCharacteristic, Characteristic);
-// }
